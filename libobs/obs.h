@@ -1020,6 +1020,11 @@ EXPORT bool obs_source_active(const obs_source_t *source);
  */
 EXPORT bool obs_source_showing(const obs_source_t *source);
 
+/**
+ * Returns true if currently in preview
+ */
+EXPORT bool obs_source_previewing(const obs_source_t *source);
+
 /** Unused flag */
 #define OBS_SOURCE_FLAG_UNUSED_1 (1 << 0)
 /** Specifies to force audio to mono */

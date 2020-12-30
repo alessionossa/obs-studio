@@ -4052,6 +4052,22 @@ bool obs_source_showing(const obs_source_t *source)
 		       : false;
 }
 
+bool obs_source_previewing(const obs_source_t *source)
+{
+	if (obs_source_valid(source, "obs_source_previewing")) {
+		OBSBasic *main = reinterpret_cast<OBSBasic *>(App()->GetMainWindow());
+
+		if (main->IsPreviewProgramMode()) {
+			OBSSOurce previewSource = main->GetCurrentSceneSource();
+
+			return (previewSource == source) ? true 
+					: false
+		} else {
+			return false
+		}
+	}
+}
+
 static inline void signal_flags_updated(obs_source_t *source)
 {
 	struct calldata data;

@@ -957,6 +957,14 @@ General Source Functions
 
 ---------------------
 
+.. function:: bool obs_source_previewing(const obs_source_t *source)
+
+   :return: *true* if previewing, *false* if not.  A source is considered
+            previewing if Studio Mode is enabled and the source is currently
+            showing in the preview pane
+
+---------------------
+
 .. function:: void obs_source_inc_showing(obs_source_t *source)
               void obs_source_dec_showing(obs_source_t *source)
 
